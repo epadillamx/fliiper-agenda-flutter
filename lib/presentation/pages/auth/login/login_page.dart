@@ -47,7 +47,7 @@ class _LoginPageState extends State<LoginPage> {
       });
 
       try {
-        final type = _isProfessional ? 'professional' : 'client';
+        final type = _isProfessional ? '1' : '0';
         await _sendCodeUseCase.execute(_emailController.text.trim(), type);
 
         if (mounted) {
@@ -93,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
     });
 
     try {
-      final type = _isProfessional ? 'professional' : 'client';
+      final type = _isProfessional ? '1' : '0';
       final user = await _verifyCodeUseCase.execute(
         _emailController.text.trim(),
         code,
